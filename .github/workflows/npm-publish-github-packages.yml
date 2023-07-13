@@ -24,6 +24,8 @@ jobs:
         run: pnpm dev
       - name: Commit dist files
         run: |
+          git config --global user.name 'deadcalm'
+          git config --global user.email '943924386@qq.com'
           git add -f dist
           git commit -m "Update dist folder"
           git push
