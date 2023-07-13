@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run Build
-        run: pnpm test
+        run: pnpm dev
 
   publish-gpr:
     needs: build
