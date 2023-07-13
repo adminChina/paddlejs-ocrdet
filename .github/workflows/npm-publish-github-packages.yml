@@ -22,6 +22,13 @@ jobs:
         run: pnpm install
       - name: Run Build
         run: pnpm dev
+      - name: Commit dist files
+        run: |
+          git add dist
+          git commit -m "Update dist folder"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
