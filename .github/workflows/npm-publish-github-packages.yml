@@ -16,8 +16,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: pnpm ci
-      - run: pnpm test
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Build
+        run: pnpm test
 
   publish-gpr:
     needs: build
