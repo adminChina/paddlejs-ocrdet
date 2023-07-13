@@ -24,7 +24,7 @@ jobs:
         run: pnpm dev
       - name: Commit dist files
         run: |
-          git add dist
+          git add -f dist
           git commit -m "Update dist folder"
           git push
         env:
