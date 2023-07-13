@@ -27,8 +27,8 @@ jobs:
           git config --global user.name 'deadcalm'
           git config --global user.email '943924386@qq.com'
           git add -f dist
-          git commit -m "Update dist folder"
           if [[ -n "$(git status --porcelain)" ]]; then
+            git commit -m "Update dist folder"
             git push
           else
             echo "No changes to push"
